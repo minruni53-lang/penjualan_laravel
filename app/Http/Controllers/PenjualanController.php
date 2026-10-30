@@ -29,7 +29,7 @@ class PenjualanController extends Controller
     {
         $validated = $request->validate([
             'kode_transaksi' => ['required', 'string', 'max:30', 'unique:penjualan,kode_transaksi'],
-            'tanggal' => ['required', 'date'],
+            'tanggal' => ['required', 'date', 'before_or_equal:today'],
             'nama_pelanggan' => ['required', 'string', 'max:100'],
             'nama_produk' => ['required', 'string', 'max:120'],
             'jumlah' => ['required', 'integer', 'min:1'],
@@ -66,7 +66,7 @@ class PenjualanController extends Controller
                 'max:30',
                 Rule::unique('penjualan', 'kode_transaksi')->ignore($penjualan->id),
             ],
-            'tanggal' => ['required', 'date'],
+            'tanggal' => ['required', 'date', 'before_or_equal:today'],
             'nama_pelanggan' => ['required', 'string', 'max:100'],
             'nama_produk' => ['required', 'string', 'max:120'],
             'jumlah' => ['required', 'integer', 'min:1'],
