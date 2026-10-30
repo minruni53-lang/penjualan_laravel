@@ -46,7 +46,11 @@
                             Rp {{ number_format((float) $item->total, 0, ',', '.') }}
                         </td>
                         <td>
-                            <span class="badge">{{ $item->status }}</span>
+                            <span class="badge
+                            {{ $item->status === 'Selesai' ? 'badge-success' : '' }}
+                            {{ $item->status === 'Pending' ? 'badge-pending' : '' }}
+                            {{ $item->status === 'Batal' ? 'badge-danger' : '' }}">
+                            {{ $item->status }} </span>
                         </td>
                         <td>
                             <div class="actions">

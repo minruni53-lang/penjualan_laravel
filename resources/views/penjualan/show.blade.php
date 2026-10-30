@@ -29,7 +29,14 @@
 
             <div>
                 <strong>Status</strong>
-                <p>{{ $penjualan->status }}</p>
+                <p>
+                    <span class="badge
+                        {{ $penjualan->status === 'Selesai' ? 'badge-success' : '' }}
+                        {{ $penjualan->status === 'Pending' ? 'badge-pending' : '' }}
+                        {{ $penjualan->status === 'Batal' ? 'badge-danger' : '' }}">
+                        {{ $penjualan->status }}
+                    </span>
+                </p>
             </div>
 
             <div>

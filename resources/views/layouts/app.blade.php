@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -162,10 +163,26 @@
         }
 
         .badge {
+            display: inline-block;
             padding: 5px 9px;
             border-radius: 999px;
             background: #f3f4f6;
             font-size: 12px;
+        }
+
+        .badge.badge-success {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .badge.badge-pending {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge.badge-danger {
+            background-color: #fee2e2;
+            color: #991b1b;
         }
 
         @media (max-width: 700px) {
